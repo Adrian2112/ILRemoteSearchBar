@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
 
   s.homepage     = "https://github.com/IcaliaLabs/ILRemoteSearchBar"
   s.license      = 'MIT'
-  s.author       = { "Adrián González" => "adrian@icalialabs.com" }
+  s.author       = { "Adrián González" => "bernardogzzf@gmail.com" }
   s.platform     = :ios
   s.source       = { :git => "https://github.com/IcaliaLabs/ILRemoteSearchBar.git", tag: '0.0.1' }
 
