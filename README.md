@@ -11,6 +11,13 @@ The search field fires the delegate method after the user stops writing for an s
 
 ##Usage
 
+Install with [cocoapods](http://cocoapods.org/)
+
+```
+pod 'ILRemoteSearchBar', git: 'https://github.com/IcaliaLabs/ILRemoteSearchBar.git'
+```
+
+
 Make your view controller conforms to `ILRemoteSearchBarDelegate` protocol
 
 ```objective-c
