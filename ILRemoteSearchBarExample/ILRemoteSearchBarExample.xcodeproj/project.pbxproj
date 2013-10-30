@@ -19,8 +19,7 @@
 		3A4C0AED182184FF00F4F6EF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A4C0AEC182184FF00F4F6EF /* XCTest.framework */; };
 		3A4C0AEE182184FF00F4F6EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A4C0ACD182184FE00F4F6EF /* Foundation.framework */; };
 		3A4C0AEF182184FF00F4F6EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A4C0AD1182184FE00F4F6EF /* UIKit.framework */; };
-		3A4C0AF7182184FF00F4F6EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A4C0AF5182184FF00F4F6EF /* InfoPlist.strings */; };
-		3A4C0AF9182184FF00F4F6EF /* ILRemoteSearchBarExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C0AF8182184FF00F4F6EF /* ILRemoteSearchBarExampleTests.m */; };
+		3A4C0B051821851200F4F6EF /* ILRemoteSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C0B041821851200F4F6EF /* ILRemoteSearchBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,9 +49,8 @@
 		3A4C0AE5182184FF00F4F6EF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3A4C0AEB182184FF00F4F6EF /* ILRemoteSearchBarExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ILRemoteSearchBarExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A4C0AEC182184FF00F4F6EF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		3A4C0AF4182184FF00F4F6EF /* ILRemoteSearchBarExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ILRemoteSearchBarExampleTests-Info.plist"; sourceTree = "<group>"; };
-		3A4C0AF6182184FF00F4F6EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3A4C0AF8182184FF00F4F6EF /* ILRemoteSearchBarExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ILRemoteSearchBarExampleTests.m; sourceTree = "<group>"; };
+		3A4C0B031821851200F4F6EF /* ILRemoteSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILRemoteSearchBar.h; sourceTree = "<group>"; };
+		3A4C0B041821851200F4F6EF /* ILRemoteSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILRemoteSearchBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +80,8 @@
 		3A4C0AC1182184FE00F4F6EF = {
 			isa = PBXGroup;
 			children = (
+				3A4C0B021821851200F4F6EF /* ILRemoteSearchBar */,
 				3A4C0AD3182184FE00F4F6EF /* ILRemoteSearchBarExample */,
-				3A4C0AF2182184FF00F4F6EF /* ILRemoteSearchBarExampleTests */,
 				3A4C0ACC182184FE00F4F6EF /* Frameworks */,
 				3A4C0ACB182184FE00F4F6EF /* Products */,
 			);
@@ -134,22 +132,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3A4C0AF2182184FF00F4F6EF /* ILRemoteSearchBarExampleTests */ = {
+		3A4C0B021821851200F4F6EF /* ILRemoteSearchBar */ = {
 			isa = PBXGroup;
 			children = (
-				3A4C0AF8182184FF00F4F6EF /* ILRemoteSearchBarExampleTests.m */,
-				3A4C0AF3182184FF00F4F6EF /* Supporting Files */,
+				3A4C0B031821851200F4F6EF /* ILRemoteSearchBar.h */,
+				3A4C0B041821851200F4F6EF /* ILRemoteSearchBar.m */,
 			);
-			path = ILRemoteSearchBarExampleTests;
-			sourceTree = "<group>";
-		};
-		3A4C0AF3182184FF00F4F6EF /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				3A4C0AF4182184FF00F4F6EF /* ILRemoteSearchBarExampleTests-Info.plist */,
-				3A4C0AF5182184FF00F4F6EF /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
+			name = ILRemoteSearchBar;
+			path = ../ILRemoteSearchBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,7 +229,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A4C0AF7182184FF00F4F6EF /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +241,7 @@
 			files = (
 				3A4C0ADA182184FE00F4F6EF /* main.m in Sources */,
 				3A4C0ADE182184FE00F4F6EF /* ILAppDelegate.m in Sources */,
+				3A4C0B051821851200F4F6EF /* ILRemoteSearchBar.m in Sources */,
 				3A4C0AE4182184FE00F4F6EF /* ILViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,7 +250,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A4C0AF9182184FF00F4F6EF /* ILRemoteSearchBarExampleTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,14 +278,6 @@
 				3A4C0AE0182184FE00F4F6EF /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		3A4C0AF5182184FF00F4F6EF /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3A4C0AF6182184FF00F4F6EF /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

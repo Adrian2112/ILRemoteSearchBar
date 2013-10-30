@@ -1,18 +1,76 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4451" systemVersion="13A461" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3676"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ILViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9rK-gQ-1Cb"/>
+                        <viewControllerLayoutGuide type="bottom" id="VCS-W1-ppS"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" text="" placeholder="ILRemoteSearchBar" translatesAutoresizingMaskIntoConstraints="NO" id="nov-gl-X8M" customClass="ILRemoteSearchBar">
+                                <rect key="frame" x="0.0" y="95" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="wTM-Qc-U3M"/>
+                                </connections>
+                            </searchBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXi-Zd-npy">
+                                <rect key="frame" x="0.0" y="185" width="320" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="tvX-k1-gdt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <searchBar contentMode="redraw" placeholder="UISearchBar" translatesAutoresizingMaskIntoConstraints="NO" id="r7g-rC-8GS">
+                                <rect key="frame" x="0.0" y="51" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="2sL-Ll-xJi"/>
+                                </connections>
+                            </searchBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="every time the bottom label is updated you make a call to the api (less is better)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="260" translatesAutoresizingMaskIntoConstraints="NO" id="dJp-Lm-XKa">
+                                <rect key="frame" x="30" y="139" width="260" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="FKL-Rw-qWn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kXi-Zd-npy" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="4Pf-3w-SmO"/>
+                            <constraint firstItem="kXi-Zd-npy" firstAttribute="top" secondItem="dJp-Lm-XKa" secondAttribute="bottom" constant="14" id="K4N-gp-y6h"/>
+                            <constraint firstItem="r7g-rC-8GS" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="KS9-Hy-Sqk"/>
+                            <constraint firstItem="r7g-rC-8GS" firstAttribute="top" secondItem="9rK-gQ-1Cb" secondAttribute="bottom" constant="31" id="aoA-R2-PZs"/>
+                            <constraint firstAttribute="trailing" secondItem="nov-gl-X8M" secondAttribute="trailing" id="b5u-5d-wRh"/>
+                            <constraint firstItem="nov-gl-X8M" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="f98-5j-VB2"/>
+                            <constraint firstAttribute="centerX" secondItem="dJp-Lm-XKa" secondAttribute="centerX" id="jUN-kf-yf8"/>
+                            <constraint firstItem="dJp-Lm-XKa" firstAttribute="top" secondItem="nov-gl-X8M" secondAttribute="bottom" id="knG-H2-27W"/>
+                            <constraint firstAttribute="trailing" secondItem="r7g-rC-8GS" secondAttribute="trailing" id="l3Q-Fl-zEF"/>
+                            <constraint firstAttribute="trailing" secondItem="kXi-Zd-npy" secondAttribute="trailing" id="q9l-gU-3l6"/>
+                            <constraint firstItem="nov-gl-X8M" firstAttribute="top" secondItem="r7g-rC-8GS" secondAttribute="bottom" id="yFJ-Uz-oiD"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="kXi-Zd-npy" id="AQX-oV-WrO"/>
+                        <outlet property="searchBar" destination="nov-gl-X8M" id="U7E-fQ-JdQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

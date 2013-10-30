@@ -7,23 +7,38 @@
 //
 
 #import "ILViewController.h"
+#import "ILRemoteSearchBar.h"
 
-@interface ILViewController ()
+@interface ILViewController () <ILRemoteSearchBarDelegate, UISearchBarDelegate>
+@property (weak, nonatomic) IBOutlet ILRemoteSearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end
 
 @implementation ILViewController
 
-- (void)viewDidLoad
+-(void)viewDidLoad
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    self.searchBar.timeToWait = 0.5; // the default value is 0.5 you can change it with this variable
 }
 
-- (void)didReceiveMemoryWarning
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.searchBar resignFirstResponder];
+}
+
+# pragma mark - ILRemoteSearchBarDelegate
+
+-(void)remoteSearchBar:(ILRemoteSearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    self.label.text = searchText;
+}
+
+#pragma mark - UISearchBarDelegate
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    self.label.text = searchText;
 }
 
 @end
