@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ILRemoteSearchBar"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "A UISearchBar subclass that observes the search field on a given frequency"
 
   s.description  = <<-DESC
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.license      = 'MIT'
   s.author       = { "Adrián González" => "bernardogzzf@gmail.com" }
   s.platform     = :ios
-  s.source       = { :git => "https://github.com/IcaliaLabs/ILRemoteSearchBar.git", :tag => '0.0.1' }
+  s.source       = { :git => "https://github.com/IcaliaLabs/ILRemoteSearchBar.git", :tag => '0.0.2' }
 
   s.source_files  = 'ILRemoteSearchBar/*.{h,m}'
   s.requires_arc = true
