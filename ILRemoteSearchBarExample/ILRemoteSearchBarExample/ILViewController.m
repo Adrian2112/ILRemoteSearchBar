@@ -38,7 +38,14 @@
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    self.label.text = searchText;
+    if (searchBar != self.searchBar) {
+        self.label.text = searchText;
+    }
+}
+
+-(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    NSLog(@"search bar text did begin editing");
 }
 
 @end

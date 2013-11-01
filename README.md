@@ -47,6 +47,25 @@ Add the remoteSearchBar:textDidChange: method to your view controller and call y
 
 ```
 
+You can even conform to `UISearchBarDelegate` and receive the delegate
+methods for your `ILRemoteSearchBar`
+
+###*_ Warning_*
+If your view controller is conforming to the UISearchBarDelegate the
+`searchBar:TextDidChange:` will be called when your `ILRemoteSearchBar`
+text is changed as `ILRemoteSearchBar` is a subclass of `UISearchBar`
+so make sure to check that the sender object is not your `ILRemoteSearchBar`
+
+```objective-c
+-(void)serchBar:(UISearchBar *)searchBar
+		textDidChange:(NSString *)searchText
+{
+  if (searchBar != self.myRemoteSearchBar) {
+    // do your thing
+  }
+}
+```
+
 ## Configuration
 You can change the time interval to wait before the delegate method is called with
 

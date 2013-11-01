@@ -17,7 +17,7 @@
 
 @implementation ILRemoteSearchBar
 
--(void)setDelegate:(id <ILRemoteSearchBarDelegate>)delegate
+-(void)setDelegate:(id <ILRemoteSearchBarDelegate, UISearchBarDelegate>)delegate
 {
     [super setDelegate:self];
     self.remoteSearchDelegate = delegate;
@@ -27,6 +27,11 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
+    // forward method call to delegate
+    if ([self.remoteSearchDelegate respondsToSelector:@selector(searchBar:textDidChange:)]) {
+        [self.remoteSearchDelegate searchBar:searchBar textDidChange:searchText];
+    }
+    
     if (self.searchTimer) {
         [self.searchTimer invalidate];
     }
@@ -53,4 +58,20 @@
     return (_timeToWait);
 }
 
+
+#pragma mark - UISearchBarDelegate forwarding
+-(BOOL)respondsToSelector:(SEL)aSelector {
+    if ([self.remoteSearchDelegate respondsToSelector:aSelector]) {
+        return YES;
+    }
+    return [super respondsToSelector:aSelector];
+}
+
+
+-(id)forwardingTargetForSelector:(SEL)aSelector {
+    if ([self.remoteSearchDelegate respondsToSelector:aSelector]) {
+        return self.remoteSearchDelegate;
+    }
+    return [super forwardingTargetForSelector:aSelector];
+}
 @end
