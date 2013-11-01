@@ -14,7 +14,7 @@ The search field fires the delegate method after the user stops writing for an s
 Install with [cocoapods](http://cocoapods.org/)
 
 ```
-pod 'ILRemoteSearchBar', git: 'https://github.com/IcaliaLabs/ILRemoteSearchBar.git'
+pod 'ILRemoteSearchBar'
 ```
 
 
