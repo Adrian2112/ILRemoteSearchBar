@@ -39,8 +39,8 @@ Add the remoteSearchBar:textDidChange: method to your view controller and call y
 ```objective-c
 # pragma mark - ILRemoteSearchBarDelegate
 
--(void)remoteSerchBar:(ILRemoteSearchBar *)searchBar
-		textDidChange:(NSString *)searchText
+- (void)remoteSearchBar:(ILRemoteSearchBar *)searchBar
+          textDidChange:(NSString *)searchText
 {
 	// call your api
 }
